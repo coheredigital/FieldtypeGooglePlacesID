@@ -3,6 +3,8 @@
 
 This modules makes it easy to store the associated Google Places ID with a business listing on your website. The Google Places ID can then be used along side the Google Places API to retrieve hours of operation, contact information, reviews and images (subject to Google Places API pricing and terms).
 
+![FieldtypeGooglePlaceID Preview](https://raw.githubusercontent.com/coheredigital/FieldtypeGooglePlacesID/main/assets/preview/fieldtype_places_id_preview.png)
+
 ### Requires [skagarwal/google-places-api](https://github.com/SachinAgarwal1337/google-places-api)
 Install it with composer.
 ```php
