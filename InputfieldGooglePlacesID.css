@@ -1,0 +1,151 @@
+.InputfieldGooglePlaces-subheading {
+	opacity: 0.6;
+}
+
+.InputfieldGooglePlaces-note {
+	opacity: 0.4;
+	margin-top: -0.25rem;
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.InputfieldGooglePlaces-list {
+	margin-top: .5rem;
+	position: relative;
+}
+
+.InputfieldGooglePlaces-list_item {
+	padding: .5rem 1rem;
+	border: 1px solid #ccc;
+	border-bottom-width: 0px;
+
+
+	color: #70879d;
+	background: #f0f3f7;
+	z-index: 0;
+	position: relative;
+
+}
+
+.InputfieldGooglePlaces-list_item_inner{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.InputfieldGooglePlaces-list_item_images{
+	margin: 0.5rem 0;
+	display: none;
+}
+.InputfieldGooglePlaces-list_item_images_list{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: start;
+	align-items: center;
+	margin: 0.5rem 0;
+}
+
+.InputfieldGooglePlaces-list_item_images a{
+	margin-right: 1rem;
+	border-radius: 0.35rem;
+	overflow: hidden;
+	border: 2px solid #fff;
+	transition: .2s;
+}
+
+.InputfieldGooglePlaces-list_item_images a:hover{
+	box-shadow: 0 0.15rem 0.25rem rgba(0, 0, 0, 0.15);
+	border-color: #000;
+}
+
+.InputfieldGooglePlaces-list_item_images img{
+	object-fit: cover;
+}
+
+.InputfieldGooglePlaces-list_item:hover {
+	background: #fafcfe;
+	color: #354b60;
+
+}
+.InputfieldGooglePlaces-list_item:last-child {
+	border-bottom-width: 1px;
+}
+
+.InputfieldGooglePlaces-list_item_description {
+
+}
+.InputfieldGooglePlaces-list_item_heading {
+}
+.InputfieldGooglePlaces-list_item_subheading {
+	opacity: 0.65;
+}
+
+
+/* current item */
+.InputfieldGooglePlaces-list_item.current {
+	background: #fff;
+	color: #354b60;
+	z-index: 1;
+	box-shadow: 0 0.1rem .25rem rgba(0, 0, 0, 0.1);
+	/* border-bottom-width: 0; */
+}
+.InputfieldGooglePlaces-list_item.current .InputfieldGooglePlaces-list_item_heading {
+	font-weight: bold;
+	color: #3eb998;
+}
+.InputfieldGooglePlaces-list_item.current .InputfieldGooglePlaces-list_item_images{
+	display: block;
+}
+
+/* selected tag / buttons */
+.InputfieldGooglePlaces-list_item_buttons {
+	display: flex;
+}
+
+.InputfieldGooglePlaces-list_item_tag {
+	padding: 0.25rem 1rem;
+	border-radius: .25rem;
+	display: none;
+	cursor: pointer;
+}
+.InputfieldGooglePlaces-list_item_link {
+	background: #fff;
+	border: 1px solid currentColor;
+}
+.InputfieldGooglePlaces-list_item_link:hover {
+	text-decoration: underline;
+}
+.InputfieldGooglePlaces-list_item:hover .InputfieldGooglePlaces-list_item_link {
+	display: block !important;
+}
+.InputfieldGooglePlaces-list_item:hover .InputfieldGooglePlaces-list_item_select {
+	display: block;
+}
+
+
+.InputfieldGooglePlaces-list_item_selected {
+	background: #3eb998;
+	color: #fff;
+	border: 1px solid #3eb998;
+	margin-left: 1rem;
+}
+.InputfieldGooglePlaces-list_item_select {
+	background: #364d68;
+	color: #fff;
+	border: 1px solid #364d68;
+	margin-left: 1rem;
+}
+.InputfieldGooglePlaces-list_item.current .InputfieldGooglePlaces-list_item_select {
+	display: none !important;
+}
+.InputfieldGooglePlaces-list_item:hover .InputfieldGooglePlaces-list_item_select:hover {
+	background: #e83561;
+	color: #fff;
+	border: 1px solid #e83561;
+}
+.InputfieldGooglePlaces-list_item.current .InputfieldGooglePlaces-list_item_selected {
+	display: block;
+}

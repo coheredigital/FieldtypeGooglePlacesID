@@ -1,0 +1,92 @@
+<?php
+
+namespace ProcessWire;
+
+class FieldtypeGooglePlacesID extends FieldtypeText implements ConfigurableModule
+{
+
+	public static function getModuleInfo()
+	{
+		return array(
+			'title' => 'Google Places ID',
+			'version' => '0.1.0',
+			'summary' => 'Field that stores a Google Places ID.',
+			'installs' => 'InputfieldGooglePlacesID',
+		);
+	}
+
+	public function init()
+	{
+		parent::init();
+		$this->allowTextFormatters(false);
+	}
+
+	/**
+	 * Return the associated InputfieldColorPicker
+	 *
+	 */
+	public function getInputfield(Page $page, Field $field)
+	{
+		$inputField = $this->modules->get('InputfieldGooglePlacesID');
+		$inputField->set('query', $page->title);
+		$inputField->set('location', $field->location);
+		$inputField->set('radius', $field->radius);
+		return $inputField;
+	}
+
+	/**
+	 * set the config option fields for this field
+	 *
+	 */
+	public function ___getConfigInputfields(Field $field)
+	{
+		$inputfields = parent::___getConfigInputfields($field);
+
+
+		$f = $this->modules->get("InputfieldText");
+		$f->attr('name', 'location');
+		$f->attr('size', 20);
+		$f->attr('value', $field->location);
+		$f->label = $this->_('Location Search Bias');
+		$f->description = $this->_('Set as "latitude,longitude" (43.092024,-79.076263).');
+		$f->notes = $this->_('This will bias results towards this location, should be combined with a radius value greater than 0.');
+		$inputfields->append($f);
+
+		$f = $this->modules->get("InputfieldInteger");
+		$f->attr('name', 'radius');
+		$f->attr('size', 10);
+		$f->attr('value', $field->radius);
+		$f->label = $this->_('Location Search Radius');
+		$f->description = $this->_('Radius used in location search bias.');
+		$inputfields->append($f);
+
+
+		return $inputfields;
+	}
+
+	/**
+	 * Module configuration
+	 *
+	 * @param array $data
+	 * @return InputfieldWrapper
+	 *
+	 */
+	public static function getModuleConfigInputfields(array $data)
+	{
+		$inputfields = new InputfieldWrapper();
+		/** @var InputfieldText $f */
+		$f = wire('modules')->get('InputfieldText');
+		$f->icon = 'map';
+		$f->description = sprintf(
+			__('[Click here](%s) for instructions from Google on how to obtain an Places API key.'),
+			'https://developers.google.com/maps/documentation/places/web-service/get-api-key'
+		);
+		$f->attr('name', 'googlePlaceApiKey');
+		$f->attr('size', 100);
+		$f->attr('value', isset($data['googlePlaceApiKey']) ? $data['googlePlaceApiKey'] : '');
+		$f->label = $this->_('Google Places API Key');
+		$f->notes = $this->_('If left blank will attempt to use config value. ($config->googlePlacesApiKey)');
+		$inputfields->add($f);
+		return $inputfields;
+	}
+}
