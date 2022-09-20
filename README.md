@@ -25,3 +25,4 @@ composer require skagarwal/google-places-api
 
 
 ### Field configuration options
+![FieldtypeGooglePlaceID configuration options](https://raw.githubusercontent.com/coheredigital/FieldtypeGooglePlacesID/main/assets/preview/fieldtype_places_id_config.png)
