@@ -2,6 +2,22 @@
 
 namespace ProcessWire;
 
+/**
+ * ProcessWire Google Place ID Fieldtype
+ *
+ * Retrieves and stores a Google Places ID based on a query using the current page title.
+ *
+ * For documentation about the fields used in this class, please see:
+ * /wire/core/Fieldtype.php
+ *
+ * Copyright (C) 2021 by Cohere Digital (Adam Spruijt)
+ * MIT License
+ *
+ *
+ * @property string $googlePlacesApiKey
+ *
+ */
+
 class FieldtypeGooglePlacesID extends FieldtypeText implements ConfigurableModule
 {
 

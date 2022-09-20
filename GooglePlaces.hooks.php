@@ -2,8 +2,20 @@
 
 namespace ProcessWire;
 
-use SKAgarwal\GoogleApi\PlacesApi;
+/**
+ * ProcessWire Google Place ID Fieldtype Hooks
+ *
+ * Adds some simple convenience methods to easily retrieve the Google Places details and
+ * images for pages using the Google Places ID fieldtype.
+ *
+ *
+ * Copyright (C) 2021 by Cohere Digital (Adam Spruijt)
+ * MIT License
+ *
+ */
 
+
+use SKAgarwal\GoogleApi\PlacesApi;
 
 $this->addHook("Page::getPlacesDetails", function ($event) {
 
@@ -105,5 +117,4 @@ $this->addHook("Page::getPlacesPhotos", function ($event) {
 
 
 	$event->return = \array_values($photoReferences);
-	// $event->return = \array_values($data);
 });
