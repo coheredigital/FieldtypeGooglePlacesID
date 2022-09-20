@@ -15,7 +15,7 @@ composer require skagarwal/google-places-api
 3. Click "install" for **FieldtypeGooglePlacesID**, this will also install the companion **InputfieldGooglePlacesID** module that will handle the admin UI.
 4. Add your Google Place API Key to the module configuration page.
 	- Alternatively your Google Places API key can be added to your site config.php using the property "$config->googlePlacesApiKey"
-	- (Instructions from Google on how to obtain an Places API key.)[https://developers.google.com/maps/documentation/places/web-service/get-api-key]
+	- [Instructions from Google on how to obtain an Places API key.](https://developers.google.com/maps/documentation/places/web-service/get-api-key)
 
 5. Now to go Setup > Fields and create a new Google Places ID field.
 6. When editing the field, click the "details" tab, and set the 'Location Search Bias' and 'Location Search Bias'.
